@@ -1,20 +1,152 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <title>Jogo da Velha</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <head>
+        <title>Jogo da Velha</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="control.js"></script>
+
+        <link rel="stylesheet" href="estilo.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <div id="initial_screen" class="container"> 
+            <div class="row">
+                <h1 id="titulo">Jogo da Velha</h1>
+            </div>
+
+            <div class="row" style="text-align: center;">
+                <div class="col-sm-4">
+                    <img src="images/jogador_1.png">
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/iniciar.png" id="btn_iniciar">
+                </div>
+                <div class="col-sm-4">
+                    <img src="images/jogador_2.png">
+                </div>
+            </div>     
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="apelido_jogador_1" aria-describedby="helpId" placeholder="Apelido Jogador 1" maxlength="12">
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="apelido_jogador_2" aria-describedby="helpId" placeholder="Apelido Jogador 2" maxlength="12">
+                    </div>
+                </div>
+            </div>       
+
+            <footer>
+                <div class="row" style="text-align: center;">
+                    <div class="col-md-6">
+                        <h3>Anthony Vinicius</h3>
+                        <h4>&copy Todos os direitos reservados</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#"><img src="images/logo-linkedin.png" class="logo-rede-social"></a>
+                        <a href="#"><img src="images/logo-instagram.png" class="logo-rede-social"></a>
+                        <a href="#"><img src="images/logo-facebook.png" class="logo-rede-social"></a>
+                        <a href="#"><img src="images/logo-github.png" class="logo-rede-social"></a>
+                        <h4>Acesse meu site agora!</h4><a href="#">Clicando aqui</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <div id="game_screen" class="container" style="border:1px solid red; display: none;">
+            <div class="row" style="text-align: center;">
+                <div class="col-sm-4">
+                    <img src="images/jogador_1.png">
+                </div>                
+                <div class="col-sm-4" id="contador_rodada">Rodada: 1</div>
+                <div class="col-sm-4">
+                    <img src="images/jogador_2.png">
+                </div>
+            </div>
+
+            <div class="row" style="text-align: center;">
+                <div class="col-sm-4">
+                    <span id="mostrar_apelido_jogador_1"></span>
+                </div>
+                <div class="col-sm-4" id="vez_de"></div>
+                <div class="col-sm-4">
+                    <span id="mostrar_apelido_jogador_2"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <table align=center>
+                        <tr>
+                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="a-1" class="posicao"></div>
+                            </td>
+                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="a-2" class="posicao"></div>
+                            </td>
+                            <td style="border-bottom: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="a-3" class="posicao"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="b-1" class="posicao"></div>
+                            </td>
+                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="b-2" class="posicao"></div>
+                            </td>
+                            <td style="border-bottom: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="b-3" class="posicao"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border-right: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="c-1" class="posicao"></div>
+                            </td>
+                            <td style="border-right: 2px solid red;">
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="c-2" class="posicao"></div>
+                            </td>
+                            <td>
+                                <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="c-3" class="posicao"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div> 
+            </div>  
+            
+            <footer>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Anthony Vinicius</h3>
+                        <h4>&copy Todos os direitos reservados</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#"><img src="images/logo-linkedin.png" class="logo-rede-social"></a>
+                        <a href="#"><img src="images/logo-instagram.png" class="logo-rede-social"></a>
+                        <a href="#"><img src="images/logo-facebook.png" class="logo-rede-social"></a>
+                        <a href="#"><img src="images/logo-github.png" class="logo-rede-social"></a>
+                        <h4>Acesse meu site agora!</h4><a href="#">Clicando aqui</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
 </html>
