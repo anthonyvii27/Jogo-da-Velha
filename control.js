@@ -129,6 +129,6 @@ $(document).ready(function(){
             $('#contador_rodada').html('Fim do jogo!');
             $('#vez_de').html(apelido_vencedor + ' venceu o jogo!');
             $('.posicao').off();
-        }
+        } 
     }
 })

@@ -5,29 +5,38 @@ body {
 }
 
 #initial_screen {
-    background: linear-gradient(150deg,#f1234a,#a7b341);
+    background: linear-gradient(150deg,#EBEBEB,#B3B3B3);
 }
 
 .logo-rede-social {
     width: 35px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.logo-jogador {
+    width: 150px;
+    padding-bottom: 50px;
 }
 
 #titulo {
 	font-weight: 800;
 	letter-spacing: -0.05em;
     margin-bottom: 100px;
-    margin-top: 50px;
+    padding-top: 60px;
     font-size: 90px;
-    text-align: right;
-    color: #FFF;
+    text-align: center;
+    color: #828282;
 }
 
 footer {
-    margin-top: 100px;
-    background: rgba(0,0,0,0.5);
-    border-radius: 10px;
+    margin-top: 70px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
     padding-top: 30px;
     padding-bottom: 30px;
+    letter-spacing: -0.05em;
+    background: rgba(0,0,0,0.4);
 }
 
 h3 {
@@ -35,5 +44,40 @@ h3 {
 }
 
 h4 {
+    color: #FFF;
+    padding-top: 10px;
+}
+
+
+#game_screen {
+    background: linear-gradient(150deg,#EBEBEB,#B3B3B3);
+}
+
+#layout-superior {
+    background: rgba(0,0,0,0.4);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-bottom: 70px;
+}
+
+#logo-jogador-game {
+    width: 80px;
+    margin-top: 25px;
+}
+
+#contador_rodada {
+    margin-top: 20px;
+    font-size: 22px;
+    color: #FFF;
+}
+
+#vez_de {
+    margin-bottom: 30px;
+    font-size: 22px;
+    color: #FFF;
+}
+
+#mostrar_apelido_jogador_1, #mostrar_apelido_jogador_2 {
+    font-size: 20px;
     color: #FFF;
 }

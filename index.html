@@ -17,35 +17,37 @@
     </head>
 
     <body>
-        <div id="initial_screen" class="container"> 
-            <div class="row">
-                <h1 id="titulo">Jogo da Velha</h1>
-            </div>
+        <div id="initial_screen" class="container">         
+            <h1 id="titulo">Jogo da Velha</h1>          
 
             <div class="row" style="text-align: center;">
-                <div class="col-sm-4">
-                    <img src="images/jogador_1.png">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-3">
+                    <img class="logo-jogador" src="images/jogador_1.png">
                 </div>
                 <div class="col-sm-4">
                     <img src="images/iniciar.png" id="btn_iniciar">
                 </div>
-                <div class="col-sm-4">
-                    <img src="images/jogador_2.png">
+                <div class="col-sm-3">
+                    <img class="logo-jogador" src="images/jogador_2.png">
                 </div>
+                <div class="col-sm-1"></div>
             </div>     
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-sm-1"></div>
+                <div class="col-md-3">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="apelido_jogador_1" aria-describedby="helpId" placeholder="Apelido Jogador 1" maxlength="12">
+                        <input type="text" class="form-control" id="apelido_jogador_1" aria-describedby="helpId" placeholder="Jogador 1" maxlength="12">
                     </div>
                 </div>
                 <div class="col-md-4"></div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="apelido_jogador_2" aria-describedby="helpId" placeholder="Apelido Jogador 2" maxlength="12">
+                        <input type="text" class="form-control" id="apelido_jogador_2" aria-describedby="helpId" placeholder="Jogador 2" maxlength="12">
                     </div>
                 </div>
+                <div class="col-sm-1"></div>
             </div>       
 
             <footer>
@@ -55,24 +57,24 @@
                         <h4>&copy Todos os direitos reservados</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="#"><img src="images/logo-linkedin.png" class="logo-rede-social"></a>
-                        <a href="#"><img src="images/logo-instagram.png" class="logo-rede-social"></a>
-                        <a href="#"><img src="images/logo-facebook.png" class="logo-rede-social"></a>
-                        <a href="#"><img src="images/logo-github.png" class="logo-rede-social"></a>
-                        <h4>Acesse meu site agora!</h4><a href="#">Clicando aqui</a>
+                        <a href="https://www.linkedin.com/in/anthonyvii27/"><img src="images/logo-linkedin.png" class="logo-rede-social"></a>
+                        <a href="https://www.instagram.com/vii.anthony/"><img src="images/logo-instagram.png" class="logo-rede-social"></a>
+                        <a href="https://github.com/anthonyvii27"><img src="images/logo-github.png" class="logo-rede-social"></a>
+                        <a href="https://anthonyvinicius.000webhostapp.com/index.html"><h4>Acesse meu site agora!</h4></a>
                     </div>
                 </div>
             </footer>
         </div>
 
-        <div id="game_screen" class="container" style="border:1px solid red; display: none;">
+        <div id="game_screen" class="container" style="display: none;">
+            <div id="layout-superior">
             <div class="row" style="text-align: center;">
                 <div class="col-sm-4">
-                    <img src="images/jogador_1.png">
+                    <img src="images/jogador_1.png" id="logo-jogador-game">
                 </div>                
                 <div class="col-sm-4" id="contador_rodada">Rodada: 1</div>
                 <div class="col-sm-4">
-                    <img src="images/jogador_2.png">
+                    <img src="images/jogador_2.png" id="logo-jogador-game">
                 </div>
             </div>
 
@@ -85,37 +87,38 @@
                     <span id="mostrar_apelido_jogador_2"></span>
                 </div>
             </div>
+        </div>
 
             <div class="row">
                 <div class="col-md-12">
                     <table align=center>
                         <tr>
-                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                            <td style="border-bottom: 2px solid #828282; border-right: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="a-1" class="posicao"></div>
                             </td>
-                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                            <td style="border-bottom: 2px solid #828282; border-right: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="a-2" class="posicao"></div>
                             </td>
-                            <td style="border-bottom: 2px solid red;">
+                            <td style="border-bottom: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="a-3" class="posicao"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                            <td style="border-bottom: 2px solid #828282; border-right: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="b-1" class="posicao"></div>
                             </td>
-                            <td style="border-bottom: 2px solid red; border-right: 2px solid red;">
+                            <td style="border-bottom: 2px solid #828282; border-right: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="b-2" class="posicao"></div>
                             </td>
-                            <td style="border-bottom: 2px solid red;">
+                            <td style="border-bottom: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="b-3" class="posicao"></div>
                             </td>
                         </tr>
                         <tr>
-                            <td style="border-right: 2px solid red;">
+                            <td style="border-right: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="c-1" class="posicao"></div>
                             </td>
-                            <td style="border-right: 2px solid red;">
+                            <td style="border-right: 2px solid #828282;">
                                 <div style="width: 150px; height: 150px; background-repeat: no-repeat;" id="c-2" class="posicao"></div>
                             </td>
                             <td>
@@ -127,17 +130,16 @@
             </div>  
             
             <footer>
-                <div class="row">
+                <div class="row" style="text-align: center;">
                     <div class="col-md-6">
                         <h3>Anthony Vinicius</h3>
                         <h4>&copy Todos os direitos reservados</h4>
                     </div>
                     <div class="col-md-6">
-                        <a href="#"><img src="images/logo-linkedin.png" class="logo-rede-social"></a>
-                        <a href="#"><img src="images/logo-instagram.png" class="logo-rede-social"></a>
-                        <a href="#"><img src="images/logo-facebook.png" class="logo-rede-social"></a>
-                        <a href="#"><img src="images/logo-github.png" class="logo-rede-social"></a>
-                        <h4>Acesse meu site agora!</h4><a href="#">Clicando aqui</a>
+                        <a href="https://www.linkedin.com/in/anthonyvii27/"><img src="images/logo-linkedin.png" class="logo-rede-social"></a>
+                        <a href="https://www.instagram.com/vii.anthony/"><img src="images/logo-instagram.png" class="logo-rede-social"></a>
+                        <a href="https://github.com/anthonyvii27"><img src="images/logo-github.png" class="logo-rede-social"></a>
+                        <a href="https://anthonyvinicius.000webhostapp.com/index.html"><h4>Acesse meu site agora!</h4></a>
                     </div>
                 </div>
             </footer>
